@@ -1,0 +1,1668 @@
+<mxfile host="app.diagrams.net" type="device">
+  <diagram id="hermes-isolation" name="Hermes isolation topology">
+    <mxGraphModel dx="1400" dy="900" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1410" pageHeight="1830" background="#EDF0F3" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="c125" value="" style="rounded=1;absoluteArcSize=1;arcSize=28;whiteSpace=wrap;html=1;fillColor=#E4E8ED;strokeColor=#BCC5D0;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="24" y="72" width="982" height="1036" as="geometry" />
+        </mxCell>
+        <mxCell id="c126" value="" style="rounded=1;absoluteArcSize=1;arcSize=28;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#BCC5D0;strokeWidth=1;dashed=1;dashPattern=6 5;" vertex="1" parent="1">
+          <mxGeometry x="1030" y="72" width="186" height="1036" as="geometry" />
+        </mxCell>
+        <mxCell id="c127" value="" style="rounded=1;absoluteArcSize=1;arcSize=20;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#8C7A6B;strokeWidth=1.3;dashed=1;dashPattern=9 3 2 3;" vertex="1" parent="1">
+          <mxGeometry x="256" y="280" width="722" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="c128" value="" style="rounded=1;absoluteArcSize=1;arcSize=20;whiteSpace=wrap;html=1;fillColor=#F3EADB;strokeColor=#B07421;strokeWidth=1;dashed=1;dashPattern=5 4;" vertex="1" parent="1">
+          <mxGeometry x="776" y="432" width="198" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="c129" value="" style="rounded=1;absoluteArcSize=1;arcSize=28;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#2E8A75;strokeWidth=1.3;dashed=1;dashPattern=8 4;" vertex="1" parent="1">
+          <mxGeometry x="49" y="199" width="164" height="800" as="geometry" />
+        </mxCell>
+        <mxCell id="c130" value="" style="rounded=1;absoluteArcSize=1;arcSize=24;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#2E8A75;strokeWidth=1.3;dashed=1;dashPattern=8 4;" vertex="1" parent="1">
+          <mxGeometry x="512" y="686" width="222" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="c131" value="" style="rounded=1;absoluteArcSize=1;arcSize=28;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#2E8A75;strokeWidth=1.3;dashed=1;dashPattern=8 4;" vertex="1" parent="1">
+          <mxGeometry x="512" y="842" width="216" height="162" as="geometry" />
+        </mxCell>
+        <mxCell id="c132" value="" style="rounded=1;absoluteArcSize=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#2E8A75;strokeWidth=1.3;dashed=1;dashPattern=8 4;" vertex="1" parent="1">
+          <mxGeometry x="24" y="1131" width="18" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c203" value="" style="rounded=1;absoluteArcSize=1;arcSize=24;html=1;fillColor=#E4E8ED;strokeColor=#BCC5D0;" vertex="1" parent="1">
+          <mxGeometry x="20" y="1266" width="1350" height="524" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;div style=&quot;font-size:13px;font-weight:600;color:#18212C;line-height:1.15&quot;&gt;Sandbox pod&lt;/div&gt;" tooltip="Под песочницы — здесь выполняются команды агента. Работает под gVisor, секретов не содержит, наружу выходит только через iron-proxy · sandbox. В фазе 1 одна долгоживущая песочница, состояние сбрасывают пересозданием; в фазе 2 — своя на каждую задачу." id="c133">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=20;whiteSpace=wrap;html=1;fillColor=#DCEEE8;strokeColor=#2E8A75;strokeWidth=1;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;fontColor=#18212C;spacing=2;verticalAlign=top;spacingTop=9;" vertex="1" parent="1">
+            <mxGeometry x="520" y="850" width="200" height="146" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;div style=&quot;font-size:12px;font-weight:600;color:#18212C;line-height:1.15&quot;&gt;Agent service&lt;/div&gt;" tooltip="Сервис агентов: запускает агентов и вызывает модели. Сейчас — к vLLM router через Legacy ingress. Дальше — через Agent Router со своим ключом и лимитом токенов." id="c134">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EDF0F3;strokeColor=#7F8C9D;strokeWidth=1;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;fontColor=#18212C;spacing=2;" vertex="1" parent="1">
+            <mxGeometry x="264" y="306" width="94" height="28" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;div style=&quot;font-size:12px;font-weight:600;color:#18212C;line-height:1.15&quot;&gt;Agent platform&lt;/div&gt;" tooltip="Вторая агентская платформа со своими инструментами и памятью. Сейчас — к vLLM router через Legacy ingress. Дальше — через Agent Router со своим ключом и лимитом токенов." id="c135">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EDF0F3;strokeColor=#7F8C9D;strokeWidth=1;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;fontColor=#18212C;spacing=2;" vertex="1" parent="1">
+            <mxGeometry x="366" y="306" width="94" height="28" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;div style=&quot;font-size:12px;font-weight:600;color:#18212C;line-height:1.15&quot;&gt;Memory service&lt;/div&gt;" tooltip="Сервис памяти агентов: моделью извлекает факты из диалогов и хранит их. Сейчас — к vLLM router через Legacy ingress. Дальше — через Agent Router со своим ключом и лимитом токенов." id="c136">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EDF0F3;strokeColor=#7F8C9D;strokeWidth=1;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;fontColor=#18212C;spacing=2;" vertex="1" parent="1">
+            <mxGeometry x="468" y="306" width="94" height="28" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;div style=&quot;font-size:12px;font-weight:600;color:#18212C;line-height:1.15&quot;&gt;Filter proxy&lt;/div&gt;" tooltip="Фильтр-прокси между агентами и моделью: проверяет промпты и ответы, но только у тех, кто ходит через него. Сейчас пересылает запросы к vLLM router через Legacy ingress. Дальше его заменяет Guardrails внутри Agent Router, который обойти нельзя." id="c137">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EDF0F3;strokeColor=#7F8C9D;strokeWidth=1;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;fontColor=#18212C;spacing=2;" vertex="1" parent="1">
+            <mxGeometry x="570" y="306" width="94" height="28" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;div style=&quot;font-size:12px;font-weight:600;color:#18212C;line-height:1.15&quot;&gt;SRE agent&lt;/div&gt;" tooltip="SRE-ассистент: разбирает алерты и инциденты с помощью модели. Сейчас — к vLLM router напрямую по адресу сервиса, мимо ingress. Дальше — через Agent Router со своим ключом и лимитом токенов." id="c138">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EDF0F3;strokeColor=#7F8C9D;strokeWidth=1;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;fontColor=#18212C;spacing=2;" vertex="1" parent="1">
+            <mxGeometry x="672" y="306" width="94" height="28" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;div style=&quot;font-size:12px;font-weight:600;color:#18212C;line-height:1.15&quot;&gt;LLM proxy&lt;/div&gt;" tooltip="LLM-прокси со своими ключами и учётом расходов. Сейчас пересылает запросы к vLLM router через Legacy ingress. Дальше — либо за Agent Router, либо убрать: ключи и лимиты есть в самом Agent Router." id="c139">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EDF0F3;strokeColor=#7F8C9D;strokeWidth=1;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;fontColor=#18212C;spacing=2;" vertex="1" parent="1">
+            <mxGeometry x="774" y="306" width="94" height="28" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;div style=&quot;font-size:12px;font-weight:600;color:#18212C;line-height:1.15&quot;&gt;API gateway&lt;/div&gt;" tooltip="API-шлюз с ключами и лимитами для внешних клиентов. Один маршрут ведёт к vLLM router через Legacy ingress, три — прямо к экземплярам vLLM, мимо router. Дальше — либо остаётся внешним входом перед Agent Router, либо его убирают; прямые маршруты к vLLM закрываются." id="c140">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EDF0F3;strokeColor=#7F8C9D;strokeWidth=1;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;fontColor=#18212C;spacing=2;" vertex="1" parent="1">
+            <mxGeometry x="876" y="306" width="94" height="28" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;div style=&quot;font-size:13px;font-weight:600;color:#8C7A6B;line-height:1.15&quot;&gt;Legacy ingress&lt;/div&gt;&lt;div style=&quot;font-size:11.5px;font-weight:500;color:#5A6676;line-height:1.15&quot;&gt;ingress-nginx&lt;/div&gt;" tooltip="Legacy ingress на ingress-nginx: через него клиенты сейчас ходят к vLLM router. Запрос выходит из сети подов и возвращается через ingress, местами по HTTP и без проверки TLS. Проект ingress-nginx закрыт в марте 2026 года, исправлений безопасности больше нет. Модельный трафик переходит на Agent Router, остальной — на Envoy Gateway; после перехода NetworkPolicy vLLM router пускает только Agent Router." id="c141">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#EDF0F3;strokeColor=#8C7A6B;strokeWidth=1.3;dashed=1;dashPattern=9 3 2 3;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;fontColor=#18212C;spacing=2;" vertex="1" parent="1">
+            <mxGeometry x="520" y="370" width="110" height="40" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;div style=&quot;font-size:12px;font-weight:600;color:#18212C;line-height:1.15&quot;&gt;Guardrails&lt;/div&gt;" tooltip="Guardrails — фильтр содержимого внутри Agent Router, а не отдельный сервис, поэтому его нельзя обойти. Видит всё, что попадает в модель, в том числе вывод команд, результаты поиска и сообщения Telegram, которые не проходят через ContextForge. Публичные LLM: маскирует секреты и персональные данные и блокирует запрос, если совпадение осталось. Своя модель: ищет prompt injection и секреты только в режиме алертов — это сигнал, а не барьер. Цена — задержка на каждом вызове и ложные срабатывания. Пока это план: продукт не выбран, совместимость с собственным фильтром Agent Router нужно проверить." id="c142">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=32;whiteSpace=wrap;html=1;fillColor=#EDF0F3;strokeColor=#1F7FA8;strokeWidth=1.3;dashed=1;dashPattern=6 4;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;fontColor=#18212C;spacing=2;" vertex="1" parent="1">
+            <mxGeometry x="300" y="552" width="118" height="32" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;div style=&quot;font-size:15px;font-weight:600;color:#18212C;line-height:1.15&quot;&gt;Hermes&lt;/div&gt;&lt;div style=&quot;font-size:15px;font-weight:600;color:#18212C;line-height:1.15&quot;&gt;Gateway/Harness&lt;/div&gt;" tooltip="Hermes Gateway/Harness — сам агент: ведёт диалог, вызывает модель и инструменты и решает, какие команды запускать. У него ключ Agent Router, токен ContextForge и SSH-ключ к песочнице, поэтому команды он выполняет не у себя, а в песочнице." id="c143">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=20;whiteSpace=wrap;html=1;fillColor=#DCEEE8;strokeColor=#2E8A75;strokeWidth=1;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;fontColor=#18212C;spacing=2;" vertex="1" parent="1">
+            <mxGeometry x="56" y="206" width="150" height="786" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;div style=&quot;font-size:13px;font-weight:600;color:#18212C;line-height:1.15&quot;&gt;iron-proxy · gateway&lt;/div&gt;" tooltip="iron-proxy · gateway — выход Hermes в интернет, только к api.telegram.org. Подставляет настоящий токен бота, у Hermes остаётся заглушка." id="c144">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=16;whiteSpace=wrap;html=1;fillColor=#F7F8FA;strokeColor=#96A2B2;strokeWidth=1;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;fontColor=#18212C;spacing=2;" vertex="1" parent="1">
+            <mxGeometry x="790" y="214" width="170" height="44" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;div style=&quot;font-size:13px;font-weight:600;color:#18212C;line-height:1.15&quot;&gt;Telegram API&lt;/div&gt;" tooltip="Telegram Bot API — второй канал общения с агентом. Hermes сам опрашивает его (long polling), входящих соединений нет." id="c145">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EDF0F3;strokeColor=#7F8C9D;strokeWidth=1;dashed=1;dashPattern=3 3;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;fontColor=#18212C;spacing=2;" vertex="1" parent="1">
+            <mxGeometry x="1050" y="218" width="150" height="36" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;div style=&quot;font-size:13px;font-weight:600;color:#18212C;line-height:1.15&quot;&gt;iron-proxy · llm&lt;/div&gt;" tooltip="iron-proxy · llm — выход Agent Router к публичным LLM API: только хосты провайдеров и POST на их эндпоинты генерации, например /v1/messages у Anthropic. Ключ провайдера подставляет прокси, в Agent Router только заглушка." id="c146">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=16;whiteSpace=wrap;html=1;fillColor=#F7F8FA;strokeColor=#96A2B2;strokeWidth=1;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;fontColor=#18212C;spacing=2;" vertex="1" parent="1">
+            <mxGeometry x="790" y="608" width="170" height="44" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;div style=&quot;font-size:13px;font-weight:600;color:#18212C;line-height:1.15&quot;&gt;Public LLM&lt;/div&gt;&lt;div style=&quot;font-size:11.5px;font-weight:500;color:#5A6676;line-height:1.15&quot;&gt;Claude · Qwen · …&lt;/div&gt;" tooltip="Публичные LLM API (Anthropic Claude, Qwen в Alibaba Cloud и другие) — альтернатива своей модели. Промпты, файлы и вывод инструментов уходят провайдеру, поэтому нужен список задач и данных, которые можно отправлять наружу; на этом маршруте Guardrails маскирует секреты и персональные данные." id="c147">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EDF0F3;strokeColor=#7F8C9D;strokeWidth=1;dashed=1;dashPattern=3 3;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;fontColor=#18212C;spacing=2;" vertex="1" parent="1">
+            <mxGeometry x="1050" y="606" width="150" height="48" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;div style=&quot;font-size:13px;font-weight:600;color:#18212C;line-height:1.15&quot;&gt;Agent Router&lt;/div&gt;&lt;div style=&quot;font-size:11.5px;font-weight:500;color:#5A6676;line-height:1.15&quot;&gt;Envoy AI Gateway&lt;/div&gt;" tooltip="Agent Router (Envoy AI Gateway) — единственный путь к моделям: своим, через vLLM router, и публичным API. Выбирает бэкенд по имени модели, у каждого клиента свой ключ и лимит токенов. Пропускает только /v1/chat/completions и /v1/models; для Claude напрямую ещё /v1/messages, потому что бэкенд Anthropic принимает только родной Messages API. Так закрыты эндпоинты vLLM, которые его API-ключ не защищает: /metrics, /tokenize и другие." id="c148">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=16;whiteSpace=wrap;html=1;fillColor=#F7F8FA;strokeColor=#96A2B2;strokeWidth=1;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;fontColor=#18212C;spacing=2;" vertex="1" parent="1">
+            <mxGeometry x="270" y="478" width="180" height="54" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;div style=&quot;font-size:13px;font-weight:600;color:#18212C;line-height:1.15&quot;&gt;vLLM router&lt;/div&gt;&lt;div style=&quot;font-size:11.5px;font-weight:500;color:#5A6676;line-height:1.15&quot;&gt;Production Stack&lt;/div&gt;" tooltip="vLLM router (vLLM Production Stack) — балансировщик между экземплярами vLLM: по имени модели выбирает экземпляры с этой моделью и распределяет между ними нагрузку (round-robin, привязка к сессии или по KV-кэшу). Клиентов не проверяет и лимитов не ставит, поэтому в целевой схеме стоит за Agent Router и клиентам недоступен; прямые пути других клиентов к нему — наследие." id="c149">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=16;whiteSpace=wrap;html=1;fillColor=#F7F8FA;strokeColor=#96A2B2;strokeWidth=1;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;fontColor=#18212C;spacing=2;" vertex="1" parent="1">
+            <mxGeometry x="520" y="478" width="200" height="54" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;div style=&quot;font-size:13px;font-weight:600;color:#18212C;line-height:1.15&quot;&gt;vLLM · Qwen&lt;/div&gt;" tooltip="vLLM — сервер инференса модели Qwen на GPU. Работает на runc с NVIDIA runtime, без gVisor, поэтому от остального кластера его отделяют NetworkPolicy (трафик только от vLLM router), отдельный узел с taint и запуск не от root; user namespace для него ещё проверяется." id="c150">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=16;whiteSpace=wrap;html=1;fillColor=#F4E3C6;strokeColor=#B07421;strokeWidth=1.2;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;fontColor=#18212C;spacing=2;" vertex="1" parent="1">
+            <mxGeometry x="790" y="472" width="170" height="40" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;div style=&quot;font-size:13px;font-weight:600;color:#18212C;line-height:1.15&quot;&gt;vLLM · gpt-oss-20b&lt;/div&gt;" tooltip="Второй экземпляр vLLM с другой моделью, для примера gpt-oss-20b. vLLM router отправляет сюда запросы, в которых указана эта модель. Если обе модели на одной GPU без MIG, они делят её память без изоляции." id="c151">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=16;whiteSpace=wrap;html=1;fillColor=#F4E3C6;strokeColor=#B07421;strokeWidth=1.2;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;fontColor=#18212C;spacing=2;" vertex="1" parent="1">
+            <mxGeometry x="790" y="526" width="170" height="40" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;div style=&quot;font-size:13px;font-weight:600;color:#18212C;line-height:1.15&quot;&gt;S3 · models&lt;/div&gt;" tooltip="S3 — хранилище весов моделей. vLLM скачивает их при старте ключом только на чтение." id="c152">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EDF0F3;strokeColor=#7F8C9D;strokeWidth=1;dashed=1;dashPattern=3 3;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;fontColor=#18212C;spacing=2;" vertex="1" parent="1">
+            <mxGeometry x="1050" y="486" width="150" height="36" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;div style=&quot;font-size:13px;font-weight:600;color:#18212C;line-height:1.15&quot;&gt;ContextForge&lt;/div&gt;" tooltip="ContextForge — шлюз MCP, единая точка доступа к инструментам. Hermes видит только инструменты своего виртуального сервера, вызовы проходят через плагины проверки (например, PII Filter, Secrets Detection и deny-фильтры), учётные данные инструментов хранятся здесь, а не в Hermes." id="c153">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=16;whiteSpace=wrap;html=1;fillColor=#F7F8FA;strokeColor=#96A2B2;strokeWidth=1;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;fontColor=#18212C;spacing=2;" vertex="1" parent="1">
+            <mxGeometry x="270" y="700" width="180" height="44" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" tooltip="MCP-серверы — инструменты агента (GitLab, Keep, инструменты кластера и другие), каждый в своём поде под gVisor. Доступны только через ContextForge." id="c154">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=16;whiteSpace=wrap;html=1;fillColor=#DCEEE8;strokeColor=#2E8A75;strokeWidth=1;" vertex="1" parent="1">
+            <mxGeometry x="526" y="694" width="200" height="44" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="c155" value="&lt;div style=&quot;font-size:13px;font-weight:600;color:#18212C;line-height:1.15&quot;&gt;MCP servers&lt;/div&gt;" style="rounded=1;absoluteArcSize=1;arcSize=16;whiteSpace=wrap;html=1;fillColor=#DCEEE8;strokeColor=#2E8A75;strokeWidth=1;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;fontColor=#18212C;spacing=2;" vertex="1" parent="1">
+          <mxGeometry x="520" y="700" width="200" height="44" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;div style=&quot;font-size:13px;font-weight:600;color:#18212C;line-height:1.15&quot;&gt;iron-proxy · mcp&lt;/div&gt;" tooltip="iron-proxy · mcp — выход MCP-серверов к их внешним API, только к разрешённым хостам. Токены подставляет, если API принимает токен как есть; запросы с подписью (например, AWS SigV4) так подменить нельзя." id="c156">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=16;whiteSpace=wrap;html=1;fillColor=#F7F8FA;strokeColor=#96A2B2;strokeWidth=1;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;fontColor=#18212C;spacing=2;" vertex="1" parent="1">
+            <mxGeometry x="790" y="700" width="170" height="44" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;div style=&quot;font-size:13px;font-weight:600;color:#18212C;line-height:1.15&quot;&gt;Tool APIs&lt;/div&gt;" tooltip="API инструментов — внешние сервисы, к которым обращаются MCP-серверы." id="c157">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EDF0F3;strokeColor=#7F8C9D;strokeWidth=1;dashed=1;dashPattern=3 3;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;fontColor=#18212C;spacing=2;" vertex="1" parent="1">
+            <mxGeometry x="1050" y="704" width="150" height="36" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;div style=&quot;font-size:12px;font-weight:600;color:#18212C;line-height:1.15&quot;&gt;PostgreSQL&lt;/div&gt;" tooltip="PostgreSQL — база ContextForge: серверы, инструменты, токены и зашифрованные учётные данные." id="c158">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#F7F8FA;strokeColor=#96A2B2;strokeWidth=1;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;fontColor=#18212C;spacing=2;" vertex="1" parent="1">
+            <mxGeometry x="270" y="782" width="85" height="36" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;div style=&quot;font-size:12px;font-weight:600;color:#18212C;line-height:1.15&quot;&gt;Redis&lt;/div&gt;" tooltip="Redis — кэш и сессии ContextForge." id="c159">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#F7F8FA;strokeColor=#96A2B2;strokeWidth=1;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;fontColor=#18212C;spacing=2;" vertex="1" parent="1">
+            <mxGeometry x="365" y="782" width="85" height="36" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;div style=&quot;font-size:13px;font-weight:600;color:#18212C;line-height:1.15&quot;&gt;sandbox-router&lt;/div&gt;" tooltip="sandbox-router — единственный вход к sandboxd в фазе 2: проверяет токен на каждый вызов и пишет аудит. Ставится отдельным Deployment, контроллер его не создаёт." id="c160">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=16;whiteSpace=wrap;html=1;fillColor=#F7F8FA;strokeColor=#96A2B2;strokeWidth=1;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;fontColor=#18212C;spacing=2;" vertex="1" parent="1">
+            <mxGeometry x="270" y="880" width="180" height="44" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;div style=&quot;font-size:13px;font-weight:600;color:#18212C;line-height:1.15&quot;&gt;sandboxd&lt;/div&gt;" tooltip="sandboxd — API внутри песочницы: запуск команд и работа с файлами. Нужен для фазы 2, когда Hermes перейдёт с SSH на плагин." id="c161">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#C4E4DA;strokeColor=#2E8A75;strokeWidth=1;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;fontColor=#18212C;spacing=2;" vertex="1" parent="1">
+            <mxGeometry x="540" y="882" width="160" height="40" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;div style=&quot;font-size:13px;font-weight:600;color:#18212C;line-height:1.15&quot;&gt;sshd&lt;/div&gt;" tooltip="sshd — вход Hermes в песочницу по SSH в фазе 1, пока нет плагина sandboxd. Работает не от root, на порту 2222." id="c162">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#C4E4DA;strokeColor=#2E8A75;strokeWidth=1;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;fontColor=#18212C;spacing=2;" vertex="1" parent="1">
+            <mxGeometry x="540" y="940" width="160" height="40" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;div style=&quot;font-size:13px;font-weight:600;color:#18212C;line-height:1.15&quot;&gt;iron-proxy · sandbox&lt;/div&gt;" tooltip="iron-proxy · sandbox — единственный выход песочницы: пропускает только разрешённые хосты и методы и подставляет токены GitLab и поиска. DNS песочницы тоже на нём: на любое имя он отвечает своим адресом и ничего не пересылает, так что DNS-туннель не работает." id="c163">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=16;whiteSpace=wrap;html=1;fillColor=#F7F8FA;strokeColor=#96A2B2;strokeWidth=1;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;fontColor=#18212C;spacing=2;" vertex="1" parent="1">
+            <mxGeometry x="790" y="880" width="170" height="44" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;div style=&quot;font-size:13px;font-weight:600;color:#18212C;line-height:1.15&quot;&gt;PyPI · npm&lt;/div&gt;" tooltip="PyPI и npm — установка пакетов в песочнице. Через iron-proxy разрешены только GET и HEAD." id="c164">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EDF0F3;strokeColor=#7F8C9D;strokeWidth=1;dashed=1;dashPattern=3 3;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;fontColor=#18212C;spacing=2;" vertex="1" parent="1">
+            <mxGeometry x="1050" y="840" width="150" height="36" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;div style=&quot;font-size:13px;font-weight:600;color:#18212C;line-height:1.15&quot;&gt;GitLab&lt;/div&gt;" tooltip="GitLab — репозитории, с которыми работает агент. Токен подставляет iron-proxy, в песочнице его нет." id="c165">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EDF0F3;strokeColor=#7F8C9D;strokeWidth=1;dashed=1;dashPattern=3 3;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;fontColor=#18212C;spacing=2;" vertex="1" parent="1">
+            <mxGeometry x="1050" y="884" width="150" height="36" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;div style=&quot;font-size:13px;font-weight:600;color:#18212C;line-height:1.15&quot;&gt;Search API&lt;/div&gt;" tooltip="API поиска — единственный доступ агента к вебу. Ключ подставляет iron-proxy." id="c166">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EDF0F3;strokeColor=#7F8C9D;strokeWidth=1;dashed=1;dashPattern=3 3;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;fontColor=#18212C;spacing=2;" vertex="1" parent="1">
+            <mxGeometry x="1050" y="928" width="150" height="36" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;div style=&quot;font-size:13px;font-weight:600;color:#18212C;line-height:1.15&quot;&gt;agent-sandbox controller&lt;/div&gt;" tooltip="Контроллер agent-sandbox создаёт поды песочниц из SandboxTemplate по объектам Sandbox и SandboxClaim, держит тёплый пул и удаляет песочницы, когда claim удалён или истёк срок." id="c167">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=16;whiteSpace=wrap;html=1;fillColor=#F7F8FA;strokeColor=#96A2B2;strokeWidth=1;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;fontColor=#18212C;spacing=2;" vertex="1" parent="1">
+            <mxGeometry x="270" y="1010" width="180" height="44" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;div style=&quot;font-size:13px;font-weight:600;color:#18212C;line-height:1.15&quot;&gt;Ingress&lt;/div&gt;&lt;div style=&quot;font-size:11.5px;font-weight:500;color:#5A6676;line-height:1.15&quot;&gt;Envoy Gateway&lt;/div&gt;" tooltip="Ingress (Envoy Gateway) — единственный вход пользователя в кластер, пропускает только к веб-интерфейсу Hermes. Здесь же TLS и аутентификация." id="c168">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=16;whiteSpace=wrap;html=1;fillColor=#F7F8FA;strokeColor=#96A2B2;strokeWidth=1;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;fontColor=#18212C;spacing=2;" vertex="1" parent="1">
+            <mxGeometry x="790" y="120" width="170" height="54" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="c169" value="&lt;div style=&quot;font-size:13px;font-weight:600;color:#18212C;line-height:1.15&quot;&gt;User&lt;/div&gt;" style="rounded=1;absoluteArcSize=1;arcSize=36;whiteSpace=wrap;html=1;fillColor=#EDF0F3;strokeColor=#18212C;strokeWidth=1.2;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;fontColor=#18212C;spacing=2;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="128" width="150" height="36" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;div style=&quot;font-size:12px;font-weight:600;color:#18212C;line-height:1.15&quot;&gt;Web UI&lt;/div&gt;" tooltip="Web UI — веб-интерфейс Hermes: чат, сессии, логи. Умеет менять конфигурацию и секреты, поэтому доступен только через ingress с аутентификацией." id="c170">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#C4E4DA;strokeColor=#2E8A75;strokeWidth=1;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;fontColor=#18212C;spacing=2;" vertex="1" parent="1">
+            <mxGeometry x="71" y="220" width="120" height="28" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="c171" value="" style="rounded=1;absoluteArcSize=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#DCEEE8;strokeColor=#2E8A75;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="28" y="1135" width="10" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="c172" value="" style="rounded=1;absoluteArcSize=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#F7F8FA;strokeColor=#96A2B2;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="314" y="1133" width="14" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="c173" value="" style="rounded=1;absoluteArcSize=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#F4E3C6;strokeColor=#B07421;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="394" y="1133" width="14" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="c204" value="" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=12.5;fontStyle=1;fontColor=#18212C;verticalAlign=bottom;spacingBottom=6;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;" vertex="1" parent="1">
+          <mxGeometry x="20" y="1266" width="250" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="c205" value="Hermes" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=12.5;fontStyle=1;fontColor=#18212C;verticalAlign=bottom;spacingBottom=6;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;" vertex="1" parent="1">
+          <mxGeometry x="270" y="1266" width="100" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="c206" value="MCP servers" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=12.5;fontStyle=1;fontColor=#18212C;verticalAlign=bottom;spacingBottom=6;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;" vertex="1" parent="1">
+          <mxGeometry x="370" y="1266" width="100" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="c207" value="Sandbox" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=12.5;fontStyle=1;fontColor=#18212C;verticalAlign=bottom;spacingBottom=6;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;" vertex="1" parent="1">
+          <mxGeometry x="470" y="1266" width="100" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="c208" value="Agent Router · Ingress" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=12.5;fontStyle=1;fontColor=#18212C;verticalAlign=bottom;spacingBottom=6;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;" vertex="1" parent="1">
+          <mxGeometry x="570" y="1266" width="100" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="c209" value="vLLM router" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=12.5;fontStyle=1;fontColor=#18212C;verticalAlign=bottom;spacingBottom=6;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;" vertex="1" parent="1">
+          <mxGeometry x="670" y="1266" width="100" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="c210" value="ContextForge" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=12.5;fontStyle=1;fontColor=#18212C;verticalAlign=bottom;spacingBottom=6;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;" vertex="1" parent="1">
+          <mxGeometry x="770" y="1266" width="100" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="c211" value="PostgreSQL · Redis" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=12.5;fontStyle=1;fontColor=#18212C;verticalAlign=bottom;spacingBottom=6;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;" vertex="1" parent="1">
+          <mxGeometry x="870" y="1266" width="100" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="c212" value="iron-proxy ×4" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=12.5;fontStyle=1;fontColor=#18212C;verticalAlign=bottom;spacingBottom=6;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;" vertex="1" parent="1">
+          <mxGeometry x="970" y="1266" width="100" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="c213" value="sandbox-router" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=12.5;fontStyle=1;fontColor=#18212C;verticalAlign=bottom;spacingBottom=6;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="1266" width="100" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="c214" value="controller" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=12.5;fontStyle=1;fontColor=#18212C;verticalAlign=bottom;spacingBottom=6;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="1266" width="100" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="c215" value="vLLM" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=12.5;fontStyle=1;fontColor=#18212C;verticalAlign=bottom;spacingBottom=6;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="1266" width="100" height="44" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;u style=&quot;text-decoration-style:dotted&quot;&gt;Runtime&lt;/u&gt; &lt;span style=&quot;background-color:#18212C;color:#EDF0F3;font-size:10.5px;&quot;&gt;&amp;nbsp;1.30&amp;nbsp;&lt;/span&gt;" tooltip="RuntimeClass выбирает рантайм пода. gVisor — для подов, которые выполняют команды агента или разбирают недоверенный контент; runc — для платформенных; runc + NVIDIA — для vLLM, которому нужен GPU. В namespace агента ValidatingAdmissionPolicy пропускает только gvisor." id="c216">
+          <mxCell style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;align=left;spacingLeft=10;fontSize=12;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+            <mxGeometry x="20" y="1310" width="250" height="30" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="c217" value="" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;" vertex="1" parent="1">
+          <mxGeometry x="270" y="1310" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c219" value="" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;" vertex="1" parent="1">
+          <mxGeometry x="370" y="1310" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c221" value="" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;" vertex="1" parent="1">
+          <mxGeometry x="470" y="1310" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c223" value="" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;" vertex="1" parent="1">
+          <mxGeometry x="570" y="1310" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c225" value="" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;" vertex="1" parent="1">
+          <mxGeometry x="670" y="1310" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c227" value="" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;" vertex="1" parent="1">
+          <mxGeometry x="770" y="1310" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c229" value="" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;" vertex="1" parent="1">
+          <mxGeometry x="870" y="1310" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c231" value="" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;" vertex="1" parent="1">
+          <mxGeometry x="970" y="1310" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c233" value="" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="1310" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c235" value="" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="1310" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c237" value="" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="1310" width="100" height="30" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;u style=&quot;text-decoration-style:dotted&quot;&gt;User namespace&lt;/u&gt;" tooltip="hostUsers: false — у пода свои UID: root в контейнере соответствует непривилегированному UID на хосте, поэтому процесс, вырвавшийся из контейнера, получает на узле только этот UID. Тома должны поддерживать ID-mapped mounts, поэтому NFS не подходит. GA в 1.36, в 1.30 — бета за feature gate." id="c239">
+          <mxCell style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;align=left;spacingLeft=10;fontSize=12;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+            <mxGeometry x="20" y="1340" width="250" height="30" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="—" tooltip="Под gVisor user namespace не включают: хост видит только процессы gVisor, а не процессы агента. Поддержка userns в runsc появилась лишь в release-20260601.0 и ещё не проверена." id="c240">
+          <mxCell style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=11.5;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+            <mxGeometry x="270" y="1340" width="100" height="30" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="—" tooltip="Под gVisor user namespace не включают: хост видит только процессы gVisor, а не процессы агента. Поддержка userns в runsc появилась лишь в release-20260601.0 и ещё не проверена." id="c241">
+          <mxCell style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=11.5;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+            <mxGeometry x="370" y="1340" width="100" height="30" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="—" tooltip="Под gVisor user namespace не включают: хост видит только процессы gVisor, а не процессы агента. Поддержка userns в runsc появилась лишь в release-20260601.0 и ещё не проверена." id="c242">
+          <mxCell style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=11.5;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+            <mxGeometry x="470" y="1340" width="100" height="30" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="c243" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="570" y="1340" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c244" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="670" y="1340" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c245" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="770" y="1340" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c246" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="870" y="1340" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c247" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="970" y="1340" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c248" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="1340" width="100" height="30" as="geometry" />
+        </mxCell>
+        <UserObject label="○" tooltip="Контроллер agent-sandbox с user namespace ещё не проверен. Включить после теста." id="c249">
+          <mxCell style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#B07421;fontFamily=Helvetica;" vertex="1" parent="1">
+            <mxGeometry x="1170" y="1340" width="100" height="30" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="○" tooltip="vLLM с user namespace нужно проверить: может сломаться доступ к GPU. Если сломается, vLLM остаётся без userns." id="c250">
+          <mxCell style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#B07421;fontFamily=Helvetica;" vertex="1" parent="1">
+            <mxGeometry x="1270" y="1340" width="100" height="30" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;u style=&quot;text-decoration-style:dotted&quot;&gt;Non-root UID&lt;/u&gt; &lt;span style=&quot;background-color:#18212C;color:#EDF0F3;font-size:10.5px;&quot;&gt;&amp;nbsp;1.30&amp;nbsp;&lt;/span&gt;" tooltip="runAsNonRoot: true и фиксированные UID и GID, например 10001: процесс не работает от root, даже если образ на это рассчитан. Для подов с user namespace PSA эти поля не проверяет, поэтому non-root отдельно требует ValidatingAdmissionPolicy." id="c251">
+          <mxCell style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;align=left;spacingLeft=10;fontSize=12;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+            <mxGeometry x="20" y="1370" width="250" height="30" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="c252" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="270" y="1370" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c253" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="370" y="1370" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c254" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="470" y="1370" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c255" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="570" y="1370" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c256" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="670" y="1370" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c257" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="770" y="1370" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c258" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="870" y="1370" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c259" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="970" y="1370" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c260" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="1370" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c261" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="1370" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c262" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="1370" width="100" height="30" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;u style=&quot;text-decoration-style:dotted&quot;&gt;Supplemental groups: Strict&lt;/u&gt;" tooltip="supplementalGroupsPolicy: Strict — процесс получает только группы из спецификации пода. При Merge, который действует по умолчанию, добавляются ещё и группы из /etc/group образа, и базовый образ может молча открыть доступ к файлам чужого GID, в том числе на общих томах. GA с 1.35." id="c263">
+          <mxCell style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;align=left;spacingLeft=10;fontSize=12;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+            <mxGeometry x="20" y="1400" width="250" height="30" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="c264" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="270" y="1400" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c265" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="370" y="1400" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c266" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="470" y="1400" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c267" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="570" y="1400" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c268" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="670" y="1400" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c269" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="770" y="1400" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c270" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="870" y="1400" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c271" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="970" y="1400" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c272" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="1400" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c273" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="1400" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c274" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="1400" width="100" height="30" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;u style=&quot;text-decoration-style:dotted&quot;&gt;No privilege escalation&lt;/u&gt; &lt;span style=&quot;background-color:#18212C;color:#EDF0F3;font-size:10.5px;&quot;&gt;&amp;nbsp;1.30&amp;nbsp;&lt;/span&gt;" tooltip="allowPrivilegeEscalation: false включает флаг no_new_privs: setuid- и setgid-биты и file capabilities перестают работать. sudo, su или setuid-файл, подброшенный в рабочую папку, не дадут больше прав, чем у процесса уже есть." id="c275">
+          <mxCell style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;align=left;spacingLeft=10;fontSize=12;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+            <mxGeometry x="20" y="1430" width="250" height="30" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="c276" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="270" y="1430" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c277" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="370" y="1430" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c278" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="470" y="1430" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c279" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="570" y="1430" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c280" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="670" y="1430" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c281" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="770" y="1430" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c282" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="870" y="1430" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c283" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="970" y="1430" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c284" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="1430" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c285" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="1430" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c286" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="1430" width="100" height="30" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;u style=&quot;text-decoration-style:dotted&quot;&gt;Drop all capabilities&lt;/u&gt; &lt;span style=&quot;background-color:#18212C;color:#EDF0F3;font-size:10.5px;&quot;&gt;&amp;nbsp;1.30&amp;nbsp;&lt;/span&gt;" tooltip="capabilities: drop: [ALL] убирает весь стандартный набор рантайма: NET_RAW, CHOWN, SETUID и остальные. Обратно добавляют только NET_BIND_SERVICE, и только там, где нужен порт ниже 1024." id="c287">
+          <mxCell style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;align=left;spacingLeft=10;fontSize=12;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+            <mxGeometry x="20" y="1460" width="250" height="30" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="c288" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="270" y="1460" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c289" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="370" y="1460" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c290" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="470" y="1460" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c291" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="570" y="1460" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c292" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="670" y="1460" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c293" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="770" y="1460" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c294" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="870" y="1460" width="100" height="30" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;u style=&quot;text-decoration-style:dotted&quot;&gt;● +bind&lt;/u&gt;" tooltip="iron-proxy слушает порты 53 и 443, поэтому ему оставляют NET_BIND_SERVICE. Вариант без capability — sysctl net.ipv4.ip_unprivileged_port_start." id="c295">
+          <mxCell style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=11.5;fontColor=#4B57C9;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+            <mxGeometry x="970" y="1460" width="100" height="30" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="c296" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="1460" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c297" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="1460" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c298" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="1460" width="100" height="30" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;u style=&quot;text-decoration-style:dotted&quot;&gt;seccomp RuntimeDefault&lt;/u&gt; &lt;span style=&quot;background-color:#18212C;color:#EDF0F3;font-size:10.5px;&quot;&gt;&amp;nbsp;1.30&amp;nbsp;&lt;/span&gt;" tooltip="seccompProfile: RuntimeDefault — фильтр системных вызовов из профиля рантайма. Запрещает около сорока вызовов, которые приложениям не нужны, в том числе загрузку модулей ядра, mount, kexec и bpf, и этим сужает атаку на ядро. Kubelet с seccompDefault ставит этот профиль и подам, где он не указан." id="c299">
+          <mxCell style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;align=left;spacingLeft=10;fontSize=12;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+            <mxGeometry x="20" y="1490" width="250" height="30" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="c300" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="270" y="1490" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c301" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="370" y="1490" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c302" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="470" y="1490" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c303" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="570" y="1490" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c304" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="670" y="1490" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c305" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="770" y="1490" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c306" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="870" y="1490" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c307" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="970" y="1490" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c308" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="1490" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c309" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="1490" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c310" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="1490" width="100" height="30" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;u style=&quot;text-decoration-style:dotted&quot;&gt;AppArmor RuntimeDefault&lt;/u&gt; &lt;span style=&quot;background-color:#18212C;color:#EDF0F3;font-size:10.5px;&quot;&gt;&amp;nbsp;1.30&amp;nbsp;&lt;/span&gt;" tooltip="appArmorProfile: RuntimeDefault — профиль AppArmor рантайма: запрещает mount, запись в /proc/sys и в большую часть /sys. AppArmor действует в ядре хоста, поэтому защищает прежде всего runc-поды: системные вызовы подов под gVisor сначала обрабатывает Sentry." id="c311">
+          <mxCell style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;align=left;spacingLeft=10;fontSize=12;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+            <mxGeometry x="20" y="1520" width="250" height="30" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="c312" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="270" y="1520" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c313" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="370" y="1520" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c314" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="470" y="1520" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c315" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="570" y="1520" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c316" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="670" y="1520" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c317" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="770" y="1520" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c318" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="870" y="1520" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c319" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="970" y="1520" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c320" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="1520" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c321" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="1520" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c322" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="1520" width="100" height="30" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;u style=&quot;text-decoration-style:dotted&quot;&gt;Read-only root filesystem&lt;/u&gt; &lt;span style=&quot;background-color:#18212C;color:#EDF0F3;font-size:10.5px;&quot;&gt;&amp;nbsp;1.30&amp;nbsp;&lt;/span&gt;" tooltip="readOnlyRootFilesystem: true — файловая система образа доступна только для чтения: подменить бинарник, библиотеку или конфиг внутри образа нельзя. Писать можно только в emptyDir с ограничением размера." id="c323">
+          <mxCell style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;align=left;spacingLeft=10;fontSize=12;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+            <mxGeometry x="20" y="1550" width="250" height="30" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="c324" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="270" y="1550" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c325" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="370" y="1550" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c326" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="470" y="1550" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c327" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="570" y="1550" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c328" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="670" y="1550" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c329" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="770" y="1550" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c330" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="870" y="1550" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c331" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="970" y="1550" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c332" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="1550" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c333" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="1550" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c334" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="1550" width="100" height="30" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;u style=&quot;text-decoration-style:dotted&quot;&gt;Recursive read-only mounts&lt;/u&gt;" tooltip="recursiveReadOnly: Enabled распространяет read-only на всё дерево монтирования. Обычный readOnly: true не рекурсивен: вложенные монтирования под ним остаются доступны для записи. Если рантайм так не умеет, под не запустится. GA с 1.33." id="c335">
+          <mxCell style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;align=left;spacingLeft=10;fontSize=12;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+            <mxGeometry x="20" y="1580" width="250" height="30" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="c336" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="270" y="1580" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c337" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="370" y="1580" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c338" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="470" y="1580" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c339" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="570" y="1580" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c340" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="670" y="1580" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c341" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="770" y="1580" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c342" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="870" y="1580" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c343" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="970" y="1580" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c344" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="1580" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c345" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="1580" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c346" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="1580" width="100" height="30" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;u style=&quot;text-decoration-style:dotted&quot;&gt;No ServiceAccount token&lt;/u&gt; &lt;span style=&quot;background-color:#18212C;color:#EDF0F3;font-size:10.5px;&quot;&gt;&amp;nbsp;1.30&amp;nbsp;&lt;/span&gt;" tooltip="automountServiceAccountToken: false — токен Kubernetes API в под не монтируется, и код в поде не может обращаться к API от имени пода. Токен получают только компоненты, которым API нужен для работы, с узкими правами RBAC." id="c347">
+          <mxCell style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;align=left;spacingLeft=10;fontSize=12;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+            <mxGeometry x="20" y="1610" width="250" height="30" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;u style=&quot;text-decoration-style:dotted&quot;&gt;RBAC · P2&lt;/u&gt;" tooltip="Hermes получает токен только в фазе 2, для SandboxClaim: create, get и delete в namespace песочниц. В фазе 1 токена нет." id="c348">
+          <mxCell style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=11.5;fontColor=#4B57C9;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+            <mxGeometry x="270" y="1610" width="100" height="30" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="c349" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="370" y="1610" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c350" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="470" y="1610" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c351" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="570" y="1610" width="100" height="30" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;u style=&quot;text-decoration-style:dotted&quot;&gt;RBAC&lt;/u&gt;" tooltip="Токен нужен, только если router находит поды vLLM по меткам через API: права только list и watch подов в namespace vLLM. Со статическим списком экземпляров токен не нужен." id="c352">
+          <mxCell style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=11.5;fontColor=#4B57C9;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+            <mxGeometry x="670" y="1610" width="100" height="30" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="c353" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="770" y="1610" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c354" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="870" y="1610" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c355" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="970" y="1610" width="100" height="30" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;u style=&quot;text-decoration-style:dotted&quot;&gt;RBAC&lt;/u&gt;" tooltip="Токен у sandbox-router — только если ему нужен API для поиска песочниц, и тогда RBAC только на чтение объектов Sandbox." id="c356">
+          <mxCell style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=11.5;fontColor=#4B57C9;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+            <mxGeometry x="1070" y="1610" width="100" height="30" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;u style=&quot;text-decoration-style:dotted&quot;&gt;RBAC&lt;/u&gt;" tooltip="Контроллеру токен нужен: он создаёт поды песочниц и их NetworkPolicy. Его ClusterRole проверяют до установки." id="c357">
+          <mxCell style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=11.5;fontColor=#4B57C9;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+            <mxGeometry x="1170" y="1610" width="100" height="30" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="c358" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="1610" width="100" height="30" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;u style=&quot;text-decoration-style:dotted&quot;&gt;Service links off&lt;/u&gt; &lt;span style=&quot;background-color:#18212C;color:#EDF0F3;font-size:10.5px;&quot;&gt;&amp;nbsp;1.30&amp;nbsp;&lt;/span&gt;" tooltip="enableServiceLinks: false — kubelet не добавляет в контейнеры переменные окружения для каждого сервиса namespace (*_SERVICE_HOST, *_PORT и другие). Иначе код агента получает готовую карту внутренних адресов без единого DNS-запроса." id="c359">
+          <mxCell style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;align=left;spacingLeft=10;fontSize=12;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+            <mxGeometry x="20" y="1640" width="250" height="30" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="c360" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="270" y="1640" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c361" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="370" y="1640" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c362" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="470" y="1640" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c363" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="570" y="1640" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c364" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="670" y="1640" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c365" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="770" y="1640" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c366" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="870" y="1640" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c367" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="970" y="1640" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c368" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="1640" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c369" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="1640" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c370" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="1640" width="100" height="30" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;u style=&quot;text-decoration-style:dotted&quot;&gt;CPU · memory · ephemeral limits&lt;/u&gt; &lt;span style=&quot;background-color:#18212C;color:#EDF0F3;font-size:10.5px;&quot;&gt;&amp;nbsp;1.30&amp;nbsp;&lt;/span&gt;" tooltip="Requests и limits на CPU, память и ephemeral-storage. Бесконечный цикл, утечка памяти или заполнение диска упираются в лимит пода и не задевают узел и соседние поды." id="c371">
+          <mxCell style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;align=left;spacingLeft=10;fontSize=12;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+            <mxGeometry x="20" y="1670" width="250" height="30" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="c372" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="270" y="1670" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c373" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="370" y="1670" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c374" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="470" y="1670" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c375" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="570" y="1670" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c376" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="670" y="1670" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c377" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="770" y="1670" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c378" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="870" y="1670" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c379" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="970" y="1670" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c380" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="1670" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c381" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="1670" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c382" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="1670" width="100" height="30" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;u style=&quot;text-decoration-style:dotted&quot;&gt;Image pinned by digest&lt;/u&gt; &lt;span style=&quot;background-color:#18212C;color:#EDF0F3;font-size:10.5px;&quot;&gt;&amp;nbsp;1.30&amp;nbsp;&lt;/span&gt;" tooltip="Образ указан по digest (@sha256:…), а не по тегу. Тег в реестре можно перезаписать, digest — нет, поэтому запускается ровно тот образ, который проверили. Ссылки без digest отклоняет ValidatingAdmissionPolicy." id="c383">
+          <mxCell style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;align=left;spacingLeft=10;fontSize=12;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+            <mxGeometry x="20" y="1700" width="250" height="30" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="c384" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="270" y="1700" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c385" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="370" y="1700" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c386" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="470" y="1700" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c387" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="570" y="1700" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c388" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="670" y="1700" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c389" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="770" y="1700" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c390" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="870" y="1700" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c391" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="970" y="1700" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c392" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="1700" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c393" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="1700" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c394" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="1700" width="100" height="30" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;u style=&quot;text-decoration-style:dotted&quot;&gt;Model from S3, read-only key&lt;/u&gt; &lt;span style=&quot;background-color:#18212C;color:#EDF0F3;font-size:10.5px;&quot;&gt;&amp;nbsp;1.30&amp;nbsp;&lt;/span&gt;" tooltip="vLLM скачивает веса из S3 ключом только на чтение, который ограничен бакетом модели и смонтирован файлом. Контрольные суммы файлов хранятся в Git и сверяются до загрузки, обращения к Hugging Face отключены (HF_HUB_OFFLINE=1)." id="c395">
+          <mxCell style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;align=left;spacingLeft=10;fontSize=12;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+            <mxGeometry x="20" y="1730" width="250" height="30" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="c396" value="—" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=11.5;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="270" y="1730" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c397" value="—" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=11.5;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="370" y="1730" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c398" value="—" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=11.5;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="470" y="1730" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c399" value="—" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=11.5;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="570" y="1730" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c400" value="—" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=11.5;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="670" y="1730" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c401" value="—" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=11.5;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="770" y="1730" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c402" value="—" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=11.5;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="870" y="1730" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c403" value="—" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=11.5;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="970" y="1730" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c404" value="—" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=11.5;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="1730" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c405" value="—" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=11.5;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="1730" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c406" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="1730" width="100" height="30" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;u style=&quot;text-decoration-style:dotted&quot;&gt;DNS only via iron-proxy&lt;/u&gt; &lt;span style=&quot;background-color:#18212C;color:#EDF0F3;font-size:10.5px;&quot;&gt;&amp;nbsp;1.30&amp;nbsp;&lt;/span&gt;" tooltip="dnsPolicy: None, единственный DNS-сервер — iron-proxy · sandbox. На любое имя он отвечает своим адресом и ничего не пересылает: весь трафик идёт через прокси, а DNS-туннель не работает. К DNS кластера доступа нет." id="c407">
+          <mxCell style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;align=left;spacingLeft=10;fontSize=12;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+            <mxGeometry x="20" y="1760" width="250" height="30" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="c408" value="—" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=11.5;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="270" y="1760" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c409" value="—" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=11.5;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="370" y="1760" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c410" value="●" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=14;fontColor=#18212C;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="470" y="1760" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c411" value="—" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=11.5;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="570" y="1760" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c412" value="—" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=11.5;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="670" y="1760" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c413" value="—" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=11.5;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="770" y="1760" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c414" value="—" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=11.5;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="870" y="1760" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c415" value="—" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=11.5;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="970" y="1760" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c416" value="—" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=11.5;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="1760" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c417" value="—" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=11.5;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="1760" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c418" value="—" style="html=1;whiteSpace=wrap;strokeColor=#BCC5D0;fillColor=none;spacing=2;fontSize=11.5;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="1760" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="" style="endArrow=open;endSize=6;endFill=0;startArrow=none;html=1;rounded=0;strokeColor=#7F8C9D;strokeWidth=1.4;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="206" y="236" as="sourcePoint" />
+            <mxPoint x="786" y="236" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2" value="" style="endArrow=open;endSize=6;endFill=0;startArrow=none;html=1;rounded=0;strokeColor=#7F8C9D;strokeWidth=1.4;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="960" y="236" as="sourcePoint" />
+            <mxPoint x="1046" y="236" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3" value="" style="endArrow=open;endSize=6;endFill=0;startArrow=none;html=1;rounded=0;strokeColor=#7F8C9D;strokeWidth=1.4;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="206" y="504" as="sourcePoint" />
+            <mxPoint x="266" y="504" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4" value="" style="endArrow=open;endSize=6;endFill=0;startArrow=none;html=1;rounded=0;strokeColor=#7F8C9D;strokeWidth=1.4;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="450" y="504" as="sourcePoint" />
+            <mxPoint x="516" y="504" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" value="" style="endArrow=open;endSize=6;endFill=0;startArrow=none;html=1;rounded=0;strokeColor=#7F8C9D;strokeWidth=1.4;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="206" y="722" as="sourcePoint" />
+            <mxPoint x="266" y="722" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e6" value="" style="endArrow=open;endSize=6;endFill=0;startArrow=none;html=1;rounded=0;strokeColor=#7F8C9D;strokeWidth=1.4;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="450" y="722" as="sourcePoint" />
+            <mxPoint x="516" y="722" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e7" value="" style="endArrow=open;endSize=6;endFill=0;startArrow=none;html=1;rounded=0;strokeColor=#7F8C9D;strokeWidth=1.4;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="728" y="722" as="sourcePoint" />
+            <mxPoint x="786" y="722" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e8" value="" style="endArrow=open;endSize=6;endFill=0;startArrow=none;html=1;rounded=0;strokeColor=#7F8C9D;strokeWidth=1.4;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="960" y="722" as="sourcePoint" />
+            <mxPoint x="1046" y="722" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e9" value="" style="endArrow=open;endSize=6;endFill=0;startArrow=none;html=1;rounded=0;strokeColor=#7F8C9D;strokeWidth=1.4;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="312.5" y="744" as="sourcePoint" />
+            <mxPoint x="312.5" y="778" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e10" value="" style="endArrow=open;endSize=6;endFill=0;startArrow=none;html=1;rounded=0;strokeColor=#7F8C9D;strokeWidth=1.4;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="407.5" y="744" as="sourcePoint" />
+            <mxPoint x="407.5" y="778" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e11" value="" style="endArrow=open;endSize=6;endFill=0;startArrow=none;html=1;rounded=0;strokeColor=#7F8C9D;strokeWidth=1.4;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="902" as="sourcePoint" />
+            <mxPoint x="786" y="902" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e12" value="" style="endArrow=open;endSize=6;endFill=0;startArrow=none;html=1;rounded=0;strokeColor=#7F8C9D;strokeWidth=1.4;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="960" y="902" as="sourcePoint" />
+            <mxPoint x="1046" y="860" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e13" value="" style="endArrow=open;endSize=6;endFill=0;startArrow=none;html=1;rounded=0;strokeColor=#7F8C9D;strokeWidth=1.4;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="960" y="902" as="sourcePoint" />
+            <mxPoint x="1046" y="902" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e14" value="" style="endArrow=open;endSize=6;endFill=0;startArrow=none;html=1;rounded=0;strokeColor=#7F8C9D;strokeWidth=1.4;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="960" y="902" as="sourcePoint" />
+            <mxPoint x="1046" y="944" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e15" value="" style="endArrow=open;endSize=6;endFill=0;startArrow=none;html=1;rounded=0;strokeColor=#7F8C9D;strokeWidth=1.4;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="206" y="960" as="sourcePoint" />
+            <mxPoint x="536" y="960" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e16" value="" style="endArrow=open;endSize=6;endFill=0;startArrow=none;html=1;rounded=0;strokeColor=#7F8C9D;strokeWidth=1.4;dashed=1;dashPattern=7 5;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="206" y="902" as="sourcePoint" />
+            <mxPoint x="266" y="902" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e17" value="" style="endArrow=open;endSize=6;endFill=0;startArrow=none;html=1;rounded=0;strokeColor=#7F8C9D;strokeWidth=1.4;dashed=1;dashPattern=7 5;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="450" y="902" as="sourcePoint" />
+            <mxPoint x="536" y="902" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e18" value="" style="endArrow=open;endSize=6;endFill=0;startArrow=none;html=1;rounded=0;strokeColor=#7F8C9D;strokeWidth=1.4;dashed=1;dashPattern=2 4;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="450" y="1032" as="sourcePoint" />
+            <mxPoint x="620" y="1000" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="620" y="1032" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e19" value="" style="endArrow=none;endSize=6;endFill=0;startArrow=none;html=1;rounded=0;strokeColor=#C3303B;strokeWidth=1.2;dashed=1;dashPattern=3 4;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="974" as="sourcePoint" />
+            <mxPoint x="996" y="974" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e20" value="" style="endArrow=open;endSize=6;endFill=0;startArrow=none;html=1;rounded=0;strokeColor=#7F8C9D;strokeWidth=1.4;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="532" as="sourcePoint" />
+            <mxPoint x="786" y="630" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="430" y="630" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e21" value="" style="endArrow=open;endSize=6;endFill=0;startArrow=none;html=1;rounded=0;strokeColor=#7F8C9D;strokeWidth=1.4;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="960" y="630" as="sourcePoint" />
+            <mxPoint x="1046" y="630" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e22" value="" style="endArrow=open;endSize=6;endFill=0;startArrow=none;html=1;rounded=0;strokeColor=#7F8C9D;strokeWidth=1.4;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="504" as="sourcePoint" />
+            <mxPoint x="786" y="492" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="745" y="504" />
+              <mxPoint x="745" y="492" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e23" value="" style="endArrow=open;endSize=6;endFill=0;startArrow=none;html=1;rounded=0;strokeColor=#7F8C9D;strokeWidth=1.4;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="745" y="504" as="sourcePoint" />
+            <mxPoint x="786" y="546" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="745" y="546" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e24" value="" style="endArrow=none;endSize=6;endFill=0;startArrow=none;html=1;rounded=0;strokeColor=#7F8C9D;strokeWidth=1.4;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="960" y="492" as="sourcePoint" />
+            <mxPoint x="990" y="504" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="990" y="492" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e25" value="" style="endArrow=none;endSize=6;endFill=0;startArrow=none;html=1;rounded=0;strokeColor=#7F8C9D;strokeWidth=1.4;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="960" y="546" as="sourcePoint" />
+            <mxPoint x="990" y="504" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="990" y="546" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e26" value="" style="endArrow=open;endSize=6;endFill=0;startArrow=none;html=1;rounded=0;strokeColor=#7F8C9D;strokeWidth=1.4;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="990" y="504" as="sourcePoint" />
+            <mxPoint x="1046" y="504" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e27" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#7F8C9D;strokeWidth=1.4;dashed=1;dashPattern=2 3;opacity=55;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1140" y="311" as="sourcePoint" />
+            <mxPoint x="1060" y="311" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e28" value="" style="endArrow=open;endSize=6;endFill=0;startArrow=none;html=1;rounded=0;strokeColor=#7F8C9D;strokeWidth=1.4;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1060" y="311" as="sourcePoint" />
+            <mxPoint x="982" y="311" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e29" value="" style="endArrow=open;endSize=6;endFill=0;startArrow=none;html=1;rounded=0;strokeColor=#1F7FA8;strokeWidth=1.4;dashed=1;dashPattern=7 5;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="342" as="sourcePoint" />
+            <mxPoint x="360" y="474" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e30" value="" style="endArrow=open;endSize=6;endFill=0;startArrow=none;html=1;rounded=0;strokeColor=#8C7A6B;strokeWidth=1.4;dashed=1;dashPattern=9 3 2 3;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="575" y="342" as="sourcePoint" />
+            <mxPoint x="575" y="366" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e31" value="" style="endArrow=open;endSize=6;endFill=0;startArrow=none;html=1;rounded=0;strokeColor=#8C7A6B;strokeWidth=1.4;dashed=1;dashPattern=9 3 2 3;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="575" y="410" as="sourcePoint" />
+            <mxPoint x="575" y="474" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e32" value="" style="endArrow=open;endSize=6;endFill=0;startArrow=none;html=1;rounded=0;strokeColor=#8C7A6B;strokeWidth=1.4;dashed=1;dashPattern=9 3 2 3;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="690" y="334" as="sourcePoint" />
+            <mxPoint x="690" y="474" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e33" value="" style="endArrow=open;endSize=6;endFill=0;startArrow=none;html=1;rounded=0;strokeColor=#8C7A6B;strokeWidth=1.4;dashed=1;dashPattern=9 3 2 3;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="950" y="334" as="sourcePoint" />
+            <mxPoint x="950" y="428" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e34" value="" style="endArrow=none;endSize=6;endFill=0;startArrow=none;html=1;rounded=0;strokeColor=#1F7FA8;strokeWidth=1.3;dashed=1;dashPattern=2 3;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="409" y="532" as="sourcePoint" />
+            <mxPoint x="409" y="552" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e99" value="" style="endArrow=open;endSize=6;endFill=0;startArrow=none;html=1;rounded=0;strokeColor=#7F8C9D;strokeWidth=1.4;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="790" y="146" as="sourcePoint" />
+            <mxPoint x="131" y="218" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="131" y="146" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e100" value="" style="endArrow=open;endSize=6;endFill=0;startArrow=none;html=1;rounded=0;strokeColor=#7F8C9D;strokeWidth=1.4;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1050" y="146" as="sourcePoint" />
+            <mxPoint x="962" y="146" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e101" value="" style="endArrow=open;endSize=6;endFill=0;startArrow=none;html=1;rounded=0;strokeColor=#7F8C9D;strokeWidth=1.4;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1125" y="164" as="sourcePoint" />
+            <mxPoint x="1125" y="216" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e116" value="" style="endArrow=open;endSize=6;endFill=0;startArrow=none;html=1;rounded=0;strokeColor=#7F8C9D;strokeWidth=1.4;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="24" y="1166" as="sourcePoint" />
+            <mxPoint x="54" y="1166" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e118" value="" style="endArrow=open;endSize=6;endFill=0;startArrow=none;html=1;rounded=0;strokeColor=#7F8C9D;strokeWidth=1.4;dashed=1;dashPattern=7 5;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="154" y="1166" as="sourcePoint" />
+            <mxPoint x="184" y="1166" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e119" value="" style="endArrow=open;endSize=6;endFill=0;startArrow=none;html=1;rounded=0;strokeColor=#7F8C9D;strokeWidth=1.4;dashed=1;dashPattern=2 4;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="350" y="1166" as="sourcePoint" />
+            <mxPoint x="380" y="1166" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e123" value="" style="endArrow=open;endSize=6;endFill=0;startArrow=none;html=1;rounded=0;strokeColor=#1F7FA8;strokeWidth=1.4;dashed=1;dashPattern=7 5;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="924" y="1166" as="sourcePoint" />
+            <mxPoint x="954" y="1166" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e124" value="" style="endArrow=open;endSize=6;endFill=0;startArrow=none;html=1;rounded=0;strokeColor=#8C7A6B;strokeWidth=1.4;dashed=1;dashPattern=9 3 2 3;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1034" y="1166" as="sourcePoint" />
+            <mxPoint x="1064" y="1166" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="sandboxd plugin&lt;br&gt;to write" tooltip="Для фазы 2 нужен плагин terminal provider для Hermes: он вызывает sandboxd через sandbox-router с токенами, привязанными к одной песочнице, порту, методу и пути. В upstream Hermes такого бэкенда нет, пишем сами (ADR-003)." id="c35">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#EDF0F3;strokeColor=#C3303B;strokeWidth=1.3;dashed=1;dashPattern=4 3;fontColor=#C3303B;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="66" y="858" width="130" height="34" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="gVisor" tooltip="gVisor — ядро в user space: системные вызовы пода обрабатывает Sentry, а не ядро хоста. Нужен подам, которые выполняют команды агента или разбирают недоверенный контент." id="c36">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=16;whiteSpace=nowrap;html=1;fillColor=#2E8A75;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="60" y="192" width="52" height="16" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="gVisor" tooltip="gVisor — ядро в user space: системные вызовы пода обрабатывает Sentry, а не ядро хоста. Нужен подам, которые выполняют команды агента или разбирают недоверенный контент." id="c37">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=16;whiteSpace=nowrap;html=1;fillColor=#2E8A75;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="522" y="678" width="52" height="16" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="gVisor" tooltip="gVisor — ядро в user space: системные вызовы пода обрабатывает Sentry, а не ядро хоста. Нужен подам, которые выполняют команды агента или разбирают недоверенный контент." id="c38">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=16;whiteSpace=nowrap;html=1;fillColor=#2E8A75;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="522" y="834" width="52" height="16" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="c39" value="userns" style="rounded=1;absoluteArcSize=1;arcSize=15;whiteSpace=nowrap;html=1;fillColor=#56638A;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="904" y="206" width="48" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="c40" value="userns" style="rounded=1;absoluteArcSize=1;arcSize=15;whiteSpace=nowrap;html=1;fillColor=#56638A;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="394" y="470" width="48" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="c41" value="userns" style="rounded=1;absoluteArcSize=1;arcSize=15;whiteSpace=nowrap;html=1;fillColor=#56638A;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="394" y="692" width="48" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="c42" value="userns" style="rounded=1;absoluteArcSize=1;arcSize=15;whiteSpace=nowrap;html=1;fillColor=#56638A;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="904" y="692" width="48" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="c43" value="userns" style="rounded=1;absoluteArcSize=1;arcSize=15;whiteSpace=nowrap;html=1;fillColor=#56638A;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="394" y="872" width="48" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="c44" value="userns" style="rounded=1;absoluteArcSize=1;arcSize=15;whiteSpace=nowrap;html=1;fillColor=#56638A;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="904" y="872" width="48" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="c45" value="userns" style="rounded=1;absoluteArcSize=1;arcSize=15;whiteSpace=nowrap;html=1;fillColor=#56638A;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="303" y="810" width="48" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="c46" value="userns" style="rounded=1;absoluteArcSize=1;arcSize=15;whiteSpace=nowrap;html=1;fillColor=#56638A;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="398" y="810" width="48" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="c47" value="userns" style="rounded=1;absoluteArcSize=1;arcSize=15;whiteSpace=nowrap;html=1;fillColor=#56638A;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="904" y="600" width="48" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="c48" value="userns" style="rounded=1;absoluteArcSize=1;arcSize=15;whiteSpace=nowrap;html=1;fillColor=#56638A;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="664" y="524.5" width="48" height="15" as="geometry" />
+        </mxCell>
+        <UserObject label="≥0.30.0" tooltip="vLLM 0.30.0 или новее: в 2026 году закрыты обход API-ключа, выполнение кода из вредоносной модели даже с выключенным trust_remote_code и падения движка на structured output. Последняя версия: 0.31.0." id="c49">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=nowrap;html=1;fillColor=#18212C;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="796" y="504.5" width="58" height="15" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="≥0.30.0" tooltip="vLLM 0.30.0 или новее: в 2026 году закрыты обход API-ключа, выполнение кода из вредоносной модели даже с выключенным trust_remote_code и падения движка на structured output. Последняя версия: 0.31.0." id="c50">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=nowrap;html=1;fillColor=#18212C;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="796" y="558.5" width="58" height="15" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="toolkit ≥1.19.1" tooltip="NVIDIA Container Toolkit даёт контейнеру vLLM доступ к GPU. Версия 1.19.1 или новее (CVE-2026-24260); GPU Operator 26.3.2, если используется; драйвер R580 ≥ 580.178.04 или R595 ≥ 595.91.07 (бюллетень 5861)." id="c51">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=nowrap;html=1;fillColor=#18212C;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="855" y="574.5" width="111" height="15" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="≥0.50.0" tooltip="iron-proxy 0.50.0 или новее: в этой версии появился источник секретов Vault KV (ADR-006). Уязвимостей не опубликовано. Последняя версия: 0.53.0." id="c52">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=nowrap;html=1;fillColor=#18212C;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="796" y="644.5" width="58" height="15" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="≥0.50.0" tooltip="iron-proxy 0.50.0 или новее: в этой версии появился источник секретов Vault KV (ADR-006). Уязвимостей не опубликовано. Последняя версия: 0.53.0." id="c53">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=nowrap;html=1;fillColor=#18212C;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="796" y="250.5" width="58" height="15" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="≥1.2.0" tooltip="Agent Router (бывший Envoy AI Gateway) 1.2.0 — версия из матрицы совместимости. Нужны Envoy Gateway 1.9.2+, Gateway API 1.6.1 и Inference Extension 1.6.2." id="c54">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=nowrap;html=1;fillColor=#18212C;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="276" y="524.5" width="52" height="15" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="k8s ≥1.33" tooltip="Agent Router 1.2.0 поддерживает Kubernetes 1.32+, но нужный ему Envoy Gateway 1.9.2 работает только на 1.33–1.36, поэтому кластеру нужна 1.33 или новее." id="c55">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=nowrap;html=1;fillColor=#18212C;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="334" y="524.5" width="72" height="15" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="≥1.0.7" tooltip="ContextForge 1.0.7 или новее: закрыты JWT-секрет по умолчанию, SSRF и обход плагинов. Последняя версия: 1.0.11." id="c56">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=nowrap;html=1;fillColor=#18212C;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="276" y="692.5" width="52" height="15" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="≥0.50.0" tooltip="iron-proxy 0.50.0 или новее: в этой версии появился источник секретов Vault KV (ADR-006). Уязвимостей не опубликовано. Последняя версия: 0.53.0." id="c57">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=nowrap;html=1;fillColor=#18212C;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="796" y="736.5" width="58" height="15" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="≥1.0.2" tooltip="agent-sandbox 1.0.2 или новее: токены роутера v2 (Ed25519). Последняя версия: 1.0.6. Минимальная версия Kubernetes не указана, тесты политик запускаются на 1.36." id="c58">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=nowrap;html=1;fillColor=#18212C;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="276" y="916.5" width="52" height="15" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="≥0.50.0" tooltip="iron-proxy 0.50.0 или новее: в этой версии появился источник секретов Vault KV (ADR-006). Уязвимостей не опубликовано. Последняя версия: 0.53.0." id="c59">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=nowrap;html=1;fillColor=#18212C;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="796" y="916.5" width="58" height="15" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="≥1.0.2" tooltip="agent-sandbox 1.0.2 или новее: токены роутера v2 (Ed25519). Последняя версия: 1.0.6. Минимальная версия Kubernetes не указана, тесты политик запускаются на 1.36." id="c60">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=nowrap;html=1;fillColor=#18212C;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="276" y="1002.5" width="52" height="15" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="≥0.16.0" tooltip="Hermes Agent 0.16.0 или новее: закрыты CVE-2026-53869 (DNS rebinding в веб-интерфейсе) и CVE-2026-53870 (база данных доступна на чтение всем). Последняя версия: 0.19.0." id="c61">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=nowrap;html=1;fillColor=#18212C;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="102" y="625" width="58" height="15" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="NP" tooltip="vLLM принимает трафик только от подов vLLM router. Router обращается только к подам vLLM, а если находит их по меткам, то ещё к API-серверу." id="c62">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=18;html=1;fillColor=#E6E8FA;strokeColor=#4B57C9;strokeWidth=1.2;fontColor=#4B57C9;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="731" y="495" width="28" height="18" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="NP" tooltip="vLLM обращается только к S3 с моделями. Ключ — только на чтение и только к бакету моделей. Веса загружаются при старте." id="c63">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=18;html=1;fillColor=#E6E8FA;strokeColor=#4B57C9;strokeWidth=1.2;fontColor=#4B57C9;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="976" y="495" width="28" height="18" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="NP" tooltip="iron-proxy · llm принимает трафик только от подов Agent Router." id="c64">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=18;html=1;fillColor=#E6E8FA;strokeColor=#4B57C9;strokeWidth=1.2;fontColor=#4B57C9;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="743" y="621" width="28" height="18" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="NP" tooltip="iron-proxy выходит в интернет только по TCP 443. Запрещены RFC1918, адрес метаданных, loopback, диапазоны подов и сервисов и внутренние сети." id="c65">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=18;html=1;fillColor=#E6E8FA;strokeColor=#4B57C9;strokeWidth=1.2;fontColor=#4B57C9;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="971" y="621" width="28" height="18" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="NP" tooltip="iron-proxy · gateway принимает трафик только от Hermes. Hermes обращается только к Agent Router, ContextForge, песочнице по TCP 2222 (фаза 1), sandbox-router и API-серверу для SandboxClaim (фаза 2), iron-proxy · gateway и DNS кластера." id="c66">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=18;html=1;fillColor=#E6E8FA;strokeColor=#4B57C9;strokeWidth=1.2;fontColor=#4B57C9;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="746" y="227" width="28" height="18" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="NP" tooltip="iron-proxy выходит в интернет только по TCP 443. Запрещены RFC1918, адрес метаданных, loopback, диапазоны подов и сервисов и внутренние сети." id="c67">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=18;html=1;fillColor=#E6E8FA;strokeColor=#4B57C9;strokeWidth=1.2;fontColor=#4B57C9;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="971" y="227" width="28" height="18" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="NP" tooltip="Agent Router (Envoy AI Gateway) принимает трафик только от Hermes, а после перехода — и от других клиентов моделей, у каждого свой ключ." id="c68">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=18;html=1;fillColor=#E6E8FA;strokeColor=#4B57C9;strokeWidth=1.2;fontColor=#4B57C9;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="222" y="495" width="28" height="18" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="NP" tooltip="vLLM router принимает трафик только от подов Agent Router. Agent Router обращается только к vLLM router и iron-proxy · llm." id="c69">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=18;html=1;fillColor=#E6E8FA;strokeColor=#4B57C9;strokeWidth=1.2;fontColor=#4B57C9;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="466" y="495" width="28" height="18" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="NP" tooltip="ContextForge принимает трафик только от Hermes." id="c70">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=18;html=1;fillColor=#E6E8FA;strokeColor=#4B57C9;strokeWidth=1.2;fontColor=#4B57C9;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="222" y="713" width="28" height="18" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="NP" tooltip="MCP-серверы принимают трафик только от ContextForge. ContextForge обращается только к MCP-подам, PostgreSQL, Redis и DNS кластера." id="c71">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=18;html=1;fillColor=#E6E8FA;strokeColor=#4B57C9;strokeWidth=1.2;fontColor=#4B57C9;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="466" y="713" width="28" height="18" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="NP" tooltip="MCP-серверы обращаются только к iron-proxy · mcp и DNS кластера. iron-proxy · mcp принимает трафик только от MCP-подов." id="c72">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=18;html=1;fillColor=#E6E8FA;strokeColor=#4B57C9;strokeWidth=1.2;fontColor=#4B57C9;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="743" y="713" width="28" height="18" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="NP" tooltip="iron-proxy выходит в интернет только по TCP 443. Запрещены RFC1918, адрес метаданных, loopback, диапазоны подов и сервисов и внутренние сети." id="c73">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=18;html=1;fillColor=#E6E8FA;strokeColor=#4B57C9;strokeWidth=1.2;fontColor=#4B57C9;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="971" y="713" width="28" height="18" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="NP" tooltip="PostgreSQL принимает трафик только от ContextForge." id="c74">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=18;html=1;fillColor=#E6E8FA;strokeColor=#4B57C9;strokeWidth=1.2;fontColor=#4B57C9;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="298.5" y="752" width="28" height="18" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="NP" tooltip="Redis принимает трафик только от ContextForge." id="c75">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=18;html=1;fillColor=#E6E8FA;strokeColor=#4B57C9;strokeWidth=1.2;fontColor=#4B57C9;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="393.5" y="752" width="28" height="18" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="NP" tooltip="sandbox-router (фаза 2) принимает трафик только от Hermes, по TCP 8080." id="c76">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=18;html=1;fillColor=#E6E8FA;strokeColor=#4B57C9;strokeWidth=1.2;fontColor=#4B57C9;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="222" y="893" width="28" height="18" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="NP" tooltip="Песочница (фаза 2) принимает трафик только от подов sandbox-router, по TCP 8080/9090. sandbox-router обращается только к подам песочниц и API-серверу." id="c77">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=18;html=1;fillColor=#E6E8FA;strokeColor=#4B57C9;strokeWidth=1.2;fontColor=#4B57C9;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="476" y="893" width="28" height="18" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="NP" tooltip="Песочница (фаза 1) принимает трафик только от Hermes, по TCP 2222; sshd работает не от root." id="c78">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=18;html=1;fillColor=#E6E8FA;strokeColor=#4B57C9;strokeWidth=1.2;fontColor=#4B57C9;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="476" y="951" width="28" height="18" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="NP" tooltip="Песочница обращается только к iron-proxy · sandbox: DNS 53 и порт туннеля. DNS кластера ей недоступен. iron-proxy · sandbox принимает трафик только от подов песочниц." id="c79">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=18;html=1;fillColor=#E6E8FA;strokeColor=#4B57C9;strokeWidth=1.2;fontColor=#4B57C9;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="743" y="893" width="28" height="18" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="NP" tooltip="iron-proxy выходит в интернет только по TCP 443, плюс одно явное исключение для GitLab, если он во внутренней сети. Остальные частные диапазоны запрещены." id="c80">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=18;html=1;fillColor=#E6E8FA;strokeColor=#4B57C9;strokeWidth=1.2;fontColor=#4B57C9;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="961" y="893" width="28" height="18" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="✕" tooltip="Прямой выход песочницы в интернет запрещён в Calico, в tier security, который проверяется раньше любых Kubernetes NetworkPolicy." id="c81">
+          <mxCell style="shape=ellipse;perimeter=ellipsePerimeter;html=1;fillColor=#EDF0F3;strokeColor=#C3303B;strokeWidth=1.4;fontColor=#C3303B;fontSize=13;fontStyle=1;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="997" y="965" width="18" height="18" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="logging" tooltip="Каждое срабатывание: правило, клиент, модель и действие — замаскировал, заблокировал или пропустил с алертом. Промпты целиком в лог не пишутся, только замаскированный фрагмент совпадения." id="c82">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=15;whiteSpace=nowrap;html=1;fillColor=#8A3F7A;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="306" y="576.5" width="58" height="15" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="logging" tooltip="Каждый запрос: модель, выбранный экземпляр vLLM, код ответа и время, плюс метрики нагрузки по экземплярам. Кто клиент, router не знает: это видно в Agent Router." id="c83">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=15;whiteSpace=nowrap;html=1;fillColor=#8A3F7A;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="526" y="524.5" width="58" height="15" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="logging" tooltip="Состояние сервера и ошибки. Запросы смотрят в Agent Router; журнал запросов vLLM держат выключенным, иначе в логах окажутся все промпты." id="c84">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=15;whiteSpace=nowrap;html=1;fillColor=#8A3F7A;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="896" y="464" width="58" height="15" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="logging" tooltip="Состояние сервера и ошибки. Запросы смотрят в Agent Router; журнал запросов vLLM держат выключенным, иначе в логах окажутся все промпты." id="c85">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=15;whiteSpace=nowrap;html=1;fillColor=#8A3F7A;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="896" y="518" width="58" height="15" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="logging" tooltip="Каждый запрос Agent Router к провайдеру: метод, хост, путь, пропущен или отклонён. Тела не пишутся: в них промпты и ответы модели." id="c86">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=15;whiteSpace=nowrap;html=1;fillColor=#8A3F7A;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="796" y="600" width="58" height="15" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="logging" tooltip="Единственная запись текста каждой команды, и в фазе 1, и в фазе 2. Ещё в логе вызовы инструментов, ответы модели и подтверждения. Его пишет тот же под, который решает, что запускать, поэтому это не независимая запись." id="c87">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=15;whiteSpace=nowrap;html=1;fillColor=#8A3F7A;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="147" y="192" width="58" height="15" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="logging" tooltip="Envoy access log на каждый вызов модели: время, длительность, путь, код ответа, запрошенная и фактическая модель, бэкенд, токены на входе и выходе, IP пода, x-request-id. Имя клиента появится, если включить forwardClientIDHeader и добавить этот заголовок в формат лога. Промптов, ответов и выбранных моделью вызовов инструментов в access log нет: всё это в телах. Трейсы OpenTelemetry по умолчанию (OpenInference) хранят тела целиком; скрываются через OPENINFERENCE_HIDE_INPUTS и _OUTPUTS." id="c88">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=15;whiteSpace=nowrap;html=1;fillColor=#8A3F7A;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="276" y="470" width="58" height="15" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="logging" tooltip="Каждый вызов MCP-инструмента: какой инструмент, кто вызвал, результат, срабатывания плагинов. Эта запись не зависит от Hermes." id="c89">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=15;whiteSpace=nowrap;html=1;fillColor=#8A3F7A;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="331" y="736.5" width="58" height="15" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="logging" tooltip="Собственные логи серверов: у каждого свой состав, и пишутся они внутри пода, который разбирает недоверенный контент. Записи, которые MCP-сервер не может подделать, — в ContextForge (вызовы) и iron-proxy · mcp (запросы наружу)." id="c90">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=15;whiteSpace=nowrap;html=1;fillColor=#8A3F7A;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="668" y="678" width="58" height="15" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="logging" tooltip="Каждый запрос Hermes к Telegram: метод, путь, пропущен или отклонён. Тела не пишутся, текстов сообщений в логе нет." id="c91">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=15;whiteSpace=nowrap;html=1;fillColor=#8A3F7A;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="796" y="206" width="58" height="15" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="logging" tooltip="Каждый запрос MCP-серверов к внешним API: метод, хост, путь, пропущен или отклонён. Тела не пишутся." id="c92">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=15;whiteSpace=nowrap;html=1;fillColor=#8A3F7A;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="796" y="692" width="58" height="15" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="logging" tooltip="Каждый запрос песочницы наружу: метод, хост, путь, пропущен или отклонён. Видны сетевые последствия команд (pip install, git push, поиск, попытки выйти к чужим хостам), но не сами команды. Тела не пишутся." id="c93">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=15;whiteSpace=nowrap;html=1;fillColor=#8A3F7A;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="796" y="872" width="58" height="15" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="logging" tooltip="Фаза 2: каждый вызов sandboxd — кто вызвал, какая песочница, метод и путь. Запись вне Hermes и песочницы. Текст команды появится здесь, только если логировать тело запроса с маскированием секретов." id="c94">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=15;whiteSpace=nowrap;html=1;fillColor=#8A3F7A;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="276" y="872" width="58" height="15" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="logging" tooltip="gVisor может отдавать событие на каждый запуск процесса в песочнице (runtime monitoring), включая процессы, которые запускают скрипты. Сопровождаемого потребителя этих событий сейчас нет. Stdout пода пишется изнутри песочницы, и агент может его подделать." id="c95">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=15;whiteSpace=nowrap;html=1;fillColor=#8A3F7A;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="662" y="834" width="58" height="15" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="logging" tooltip="Фаза 2: собственный лог sandboxd пишется внутри песочницы под тем же UID, что и команды агента, поэтому агент может его подделать. Запись, которую агент подделать не может, — в sandbox-router." id="c96">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=15;whiteSpace=nowrap;html=1;fillColor=#8A3F7A;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="636" y="914.5" width="58" height="15" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="logging" tooltip="Входы и начало сессий, без команд: Hermes держит одну постоянную оболочку и пишет команды в её stdin. Лог пишется внутри песочницы; соединения Hermes → sshd независимо видны во flow logs Calico." id="c97">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=15;whiteSpace=nowrap;html=1;fillColor=#8A3F7A;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="636" y="972.5" width="58" height="15" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="logging" tooltip="Создание и удаление песочниц, тёплый пул, ошибки шаблонов. Кто создал или удалил SandboxClaim, видно только в аудите Kubernetes API, а его ещё нужно включить." id="c98">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=15;whiteSpace=nowrap;html=1;fillColor=#8A3F7A;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="386" y="1002" width="58" height="15" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="c102" value="userns" style="rounded=1;absoluteArcSize=1;arcSize=15;whiteSpace=nowrap;html=1;fillColor=#56638A;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="904" y="112" width="48" height="15" as="geometry" />
+        </mxCell>
+        <UserObject label="logging" tooltip="Лог доступа: кто открыл веб-интерфейс, когда и какие пути запрашивал. Это журнал входов в панель, которая может менять конфигурацию Hermes." id="c103">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=15;whiteSpace=nowrap;html=1;fillColor=#8A3F7A;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="796" y="112" width="58" height="15" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="NP" tooltip="Hermes принимает трафик только от ingress-шлюза и только на порт веб-интерфейса. Самому ingress нужны TLS, аутентификация и доступ только из LAN или VPN." id="c104">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=18;html=1;fillColor=#E6E8FA;strokeColor=#4B57C9;strokeWidth=1.2;fontColor=#4B57C9;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="246" y="137" width="28" height="18" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="≥1.9.2" tooltip="Envoy Gateway 1.9.2 или новее (Envoy 1.39.1): закрыты августовские уязвимости Envoy 2026 года, в том числе fail-open в regex RBAC и обходы через нормализацию пути. Поддержка до 14.02.2027." id="c105">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=nowrap;html=1;fillColor=#18212C;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="796" y="166.5" width="52" height="15" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="k8s ≥1.33" tooltip="Envoy Gateway 1.9 поддерживает Kubernetes 1.33–1.36." id="c106">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=nowrap;html=1;fillColor=#18212C;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="854" y="166.5" width="72" height="15" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="k8s ≥1.36.5" tooltip="Kubernetes — основа схемы: RuntimeClass выбирает рантайм пода, admission-политики и NetworkPolicy задают границы. Версия 1.36.5 или новее: CVE-2026-2270 (с правом на запись StatefulSet можно создать под в другом namespace). Дизайн рассчитан на возможности 1.36." id="c107">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=nowrap;html=1;fillColor=#18212C;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="160" y="1083.5" width="85" height="15" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Calico ≥3.32.1" tooltip="Calico — CNI и движок сетевых политик: default-deny и tier security, который обычные NetworkPolicy не могут ослабить. Версия 3.32.1 или новее: TTA-2026-004/005/006, включая обход авторизации для tiers. 3.32 — первый релиз, проверенный на Kubernetes 1.36 (тестируется на 1.34–1.36)." id="c108">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=nowrap;html=1;fillColor=#18212C;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="253" y="1083.5" width="105" height="15" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="containerd ≥2.3.6" tooltip="containerd — рантайм контейнеров на узлах: по RuntimeClass запускает поды через runc, runsc или NVIDIA runtime. Версия 2.3.6 или новее: CVE-2026-53488 (label образа даёт root на хосте при pull), исправления checkpoint и DoS; этой версии хватает и для user namespaces с runsc." id="c109">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=nowrap;html=1;fillColor=#18212C;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="366" y="1083.5" width="125" height="15" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="runc ≥1.4.3" tooltip="runc — стандартный OCI-рантайм для платформенных подов и vLLM; их изолируют namespaces, seccomp и user namespaces. Версия 1.4.3 или 1.5.x: CVE-2026-41579." id="c110">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=nowrap;html=1;fillColor=#18212C;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="499" y="1083.5" width="85" height="15" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="runsc ≥20260831.0" tooltip="runsc — рантайм gVisor для подов агента. Версия release-20260831.0 или новее: CVE-2026-95702 (выполнение кода в Sentry) и CVE-2026-96812 (root на хосте через CUSE). Последняя версия: release-20261005.0." id="c111">
+          <mxCell style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=nowrap;html=1;fillColor=#18212C;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+            <mxGeometry x="592" y="1083.5" width="125" height="15" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="c112" value="userns" style="rounded=1;absoluteArcSize=1;arcSize=15;whiteSpace=nowrap;html=1;fillColor=#56638A;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="120" y="1132.5" width="48" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="c113" value="NP" style="rounded=1;absoluteArcSize=1;arcSize=18;html=1;fillColor=#E6E8FA;strokeColor=#4B57C9;strokeWidth=1.2;fontColor=#4B57C9;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="540" y="1131" width="28" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c114" value="≥1.0" style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=nowrap;html=1;fillColor=#18212C;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="700" y="1132.5" width="38" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="c115" value="k8s ≥1.33" style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=nowrap;html=1;fillColor=#18212C;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="880" y="1132.5" width="72" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="c117" value="" style="shape=ellipse;perimeter=ellipsePerimeter;html=1;fillColor=#D9572B;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="32.5" y="1162.5" width="7" height="7" as="geometry" />
+        </mxCell>
+        <mxCell id="c120" value="✕" style="shape=ellipse;perimeter=ellipsePerimeter;html=1;fillColor=#EDF0F3;strokeColor=#C3303B;strokeWidth=1.4;fontColor=#C3303B;fontSize=11;fontStyle=1;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="471" y="1159" width="14" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="c121" value="" style="rounded=1;absoluteArcSize=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#EDF0F3;strokeColor=#C3303B;strokeWidth=1.3;dashed=1;dashPattern=4 3;fontColor=#C3303B;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="572" y="1158" width="16" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="c122" value="logging" style="rounded=1;absoluteArcSize=1;arcSize=15;whiteSpace=nowrap;html=1;fillColor=#8A3F7A;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="684" y="1158.5" width="58" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="c218" value="gVisor" style="rounded=1;absoluteArcSize=1;arcSize=8;html=1;fillColor=#DCEEE8;strokeColor=#2E8A75;fontSize=11.5;fontColor=#18212C;spacing=0;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="292.3" y="1316" width="55.4" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c220" value="gVisor" style="rounded=1;absoluteArcSize=1;arcSize=8;html=1;fillColor=#DCEEE8;strokeColor=#2E8A75;fontSize=11.5;fontColor=#18212C;spacing=0;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="392.3" y="1316" width="55.4" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c222" value="gVisor" style="rounded=1;absoluteArcSize=1;arcSize=8;html=1;fillColor=#DCEEE8;strokeColor=#2E8A75;fontSize=11.5;fontColor=#18212C;spacing=0;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="492.3" y="1316" width="55.4" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c224" value="runc" style="rounded=1;absoluteArcSize=1;arcSize=8;html=1;fillColor=#F7F8FA;strokeColor=#96A2B2;fontSize=11.5;fontColor=#18212C;spacing=0;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="599.2" y="1316" width="41.6" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c226" value="runc" style="rounded=1;absoluteArcSize=1;arcSize=8;html=1;fillColor=#F7F8FA;strokeColor=#96A2B2;fontSize=11.5;fontColor=#18212C;spacing=0;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="699.2" y="1316" width="41.6" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c228" value="runc" style="rounded=1;absoluteArcSize=1;arcSize=8;html=1;fillColor=#F7F8FA;strokeColor=#96A2B2;fontSize=11.5;fontColor=#18212C;spacing=0;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="799.2" y="1316" width="41.6" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c230" value="runc" style="rounded=1;absoluteArcSize=1;arcSize=8;html=1;fillColor=#F7F8FA;strokeColor=#96A2B2;fontSize=11.5;fontColor=#18212C;spacing=0;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="899.2" y="1316" width="41.6" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c232" value="runc" style="rounded=1;absoluteArcSize=1;arcSize=8;html=1;fillColor=#F7F8FA;strokeColor=#96A2B2;fontSize=11.5;fontColor=#18212C;spacing=0;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="999.2" y="1316" width="41.6" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c234" value="runc" style="rounded=1;absoluteArcSize=1;arcSize=8;html=1;fillColor=#F7F8FA;strokeColor=#96A2B2;fontSize=11.5;fontColor=#18212C;spacing=0;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="1099.2" y="1316" width="41.6" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c236" value="runc" style="rounded=1;absoluteArcSize=1;arcSize=8;html=1;fillColor=#F7F8FA;strokeColor=#96A2B2;fontSize=11.5;fontColor=#18212C;spacing=0;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="1199.2" y="1316" width="41.6" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c238" value="runc + NVIDIA" style="rounded=1;absoluteArcSize=1;arcSize=8;html=1;fillColor=#F4E3C6;strokeColor=#B07421;fontSize=10.5;fontColor=#18212C;spacing=0;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="1274" y="1316" width="92" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c174" value="&lt;span style=&quot;letter-spacing:0.9px&quot;&gt;KUBERNETES 1.36 · CALICO TIERED DEFAULT-DENY · PSA RESTRICTED · VALIDATING + MUTATING ADMISSIONPOLICY&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=nowrap;spacing=0;fontSize=11;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="44" y="92" width="775.6" height="13" as="geometry" />
+        </mxCell>
+        <mxCell id="c175" value="&lt;span style=&quot;letter-spacing:0.9px&quot;&gt;OUTSIDE&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=nowrap;spacing=0;fontSize=11;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="92" width="61.2" height="13" as="geometry" />
+        </mxCell>
+        <mxCell id="c176" value="&lt;span style=&quot;letter-spacing:0.9px&quot;&gt;KUBELET · SECCOMPDEFAULT · PODPIDSLIMIT · PROTECTKERNELDEFAULTS · FINE-GRAINED AUTHZ&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=nowrap;spacing=0;fontSize=11;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="44" y="1060" width="646.4" height="13" as="geometry" />
+        </mxCell>
+        <mxCell id="c177" value="&lt;span style=&quot;letter-spacing:0.9px&quot;&gt;GPU NODE · TAINTED&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=nowrap;spacing=0;fontSize=11;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="790" y="441" width="144.8" height="13" as="geometry" />
+        </mxCell>
+        <UserObject label="external callers" tooltip="Этих клиентов вызывают пользователи и системы, которых нет на схеме: пользователи агентских сервисов, внешние потребители API gateway, сервисы за LLM proxy. У стрелки нет источника, потому что вызывающих много и все они вне схемы." id="c178">
+          <mxCell style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=nowrap;spacing=0;fontSize=10.5;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+            <mxGeometry x="1040" y="286" width="111.6" height="16" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;span style=&quot;letter-spacing:0.9px&quot;&gt;OTHER MODEL CLIENTS&lt;/span&gt;" tooltip="Семь сервисов, которые вызывают модели в обход Agent Router: большинство через Legacy ingress, SRE agent и три маршрута API gateway — напрямую. Цель — перевести их за Agent Router, как Hermes: у каждого свой ключ, список разрешённых моделей и лимит токенов." id="c179">
+          <mxCell style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=nowrap;spacing=0;fontSize=11;fontColor=#8C7A6B;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+            <mxGeometry x="270" y="286" width="152.4" height="13" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;u style=&quot;text-decoration-style:dotted&quot;&gt;future&lt;/u&gt;" tooltip="Все семь клиентов могут ходить к моделям только через Agent Router: они говорят на OpenAI-совместимом API, так что переход — это новый base URL и свой ключ у каждого. Что учесть: открыть эндпоинты, которыми пользуется каждый клиент; сопоставить имена моделей (Agent Router подменяет имя для бэкенда); Filter proxy заменяет Guardrails внутри Agent Router; LLM proxy и API gateway остаются перед Agent Router или уходят, прямые маршруты к vLLM закрываются. Эмбеддинги Memory service идут на отдельный сервер и пройдут через Agent Router, только если тот отдаёт OpenAI-совместимый /v1/embeddings." id="c180">
+          <mxCell style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=nowrap;spacing=0;fontSize=10.5;fontColor=#1F7FA8;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+            <mxGeometry x="366" y="406" width="45.6" height="16" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="c181" value="legacy" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=nowrap;spacing=0;fontSize=10.5;fontColor=#8C7A6B;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="581" y="436" width="45.6" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="c182" value="legacy" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=nowrap;spacing=0;fontSize=10.5;fontColor=#8C7A6B;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="696" y="388" width="45.6" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="c183" value="legacy" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=nowrap;spacing=0;fontSize=10.5;fontColor=#8C7A6B;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="956" y="378" width="45.6" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="c184" value="&lt;span style=&quot;letter-spacing:0.9px&quot;&gt;NODE SOFTWARE&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=nowrap;spacing=0;fontSize=11;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="44" y="1085" width="106.8" height="13" as="geometry" />
+        </mxCell>
+        <mxCell id="c185" value="gVisor" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=nowrap;spacing=0;fontSize=12;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="50" y="1132" width="49.8" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="c186" value="user namespace" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=nowrap;spacing=0;fontSize=12;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="176" y="1132" width="108.2" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="c187" value="runc" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=nowrap;spacing=0;fontSize=12;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="336" y="1132" width="35.2" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="c188" value="runc + NVIDIA" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=nowrap;spacing=0;fontSize=12;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="416" y="1132" width="100.9" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="c189" value="NetworkPolicy" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=nowrap;spacing=0;fontSize=12;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="576" y="1132" width="100.9" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="c190" value="minimum version" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=nowrap;spacing=0;fontSize=12;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="746" y="1132" width="115.5" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="c191" value="needs Kubernetes" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=nowrap;spacing=0;fontSize=12;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="960" y="1132" width="122.8" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="c192" value="request" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=nowrap;spacing=0;fontSize=12;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="64" y="1158" width="57.1" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="c193" value="Phase 2 · target" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=nowrap;spacing=0;fontSize=12;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="194" y="1158" width="122.8" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="c194" value="control" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=nowrap;spacing=0;fontSize=12;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="390" y="1158" width="57.1" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="c195" value="denied" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=nowrap;spacing=0;fontSize=12;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="492" y="1158" width="49.8" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="c196" value="to build" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=nowrap;spacing=0;fontSize=12;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="596" y="1158" width="64.4" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="c197" value="what its log records" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=nowrap;spacing=0;fontSize=12;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="750" y="1158" width="152" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="c198" value="future" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=nowrap;spacing=0;fontSize=12;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="964" y="1158" width="49.8" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="c199" value="legacy" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=nowrap;spacing=0;fontSize=12;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="1074" y="1158" width="49.8" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="c200" value="Hermes isolation topology" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=nowrap;fontSize=24;fontStyle=1;fontColor=#18212C;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;" vertex="1" parent="1">
+          <mxGeometry x="20" y="16" width="500" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="c201" value="Pod hardening · Kubernetes 1.36" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=nowrap;fontSize=15;fontStyle=1;fontColor=#18212C;fontFamily=Archivo;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchivo;" vertex="1" parent="1">
+          <mxGeometry x="20" y="1214" width="700" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c202" value="● applied &amp;nbsp; &lt;span style=&quot;color:#B07421;font-family:Helvetica;font-size:13px&quot;&gt;○&lt;/span&gt; to test &amp;nbsp; — not applied &amp;nbsp; &lt;span style=&quot;color:#4B57C9&quot;&gt;RBAC&lt;/span&gt; scoped token &amp;nbsp; &lt;span style=&quot;color:#4B57C9&quot;&gt;P2&lt;/span&gt; Phase 2 &amp;nbsp; &lt;span style=&quot;color:#4B57C9&quot;&gt;+bind&lt;/span&gt; NET_BIND_SERVICE &amp;nbsp; &lt;span style=&quot;background-color:#18212C;color:#EDF0F3;font-size:10.5px;&quot;&gt;&amp;nbsp;1.30&amp;nbsp;&lt;/span&gt; available in 1.30 &amp;nbsp; no badge: needs a newer release" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=nowrap;fontSize=11.5;fontColor=#5A6676;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="20" y="1240" width="1300" height="18" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
