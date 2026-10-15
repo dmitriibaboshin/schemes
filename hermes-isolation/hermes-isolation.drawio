@@ -1454,7 +1454,7 @@
             <mxGeometry x="636" y="914.5" width="58" height="15" as="geometry" />
           </mxCell>
         </UserObject>
-        <UserObject label="logging" tooltip="Входы и начало сессий, без команд: Hermes держит одну постоянную оболочку и пишет команды в её stdin. Лог пишется внутри песочницы; соединения Hermes → sshd независимо видны во flow logs Calico." id="c97">
+        <UserObject label="logging" tooltip="Hermes запускает каждую команду отдельным exec (ssh … bash -c) по общему соединению ControlMaster. Штатный sshd на LogLevel VERBOSE пишет вход по ключу один раз на соединение и строку «Starting session: command» на каждую команду, без её текста. Текст команды можно записать только обёрткой ForceCommand: sshd передаёт его ей в $SSH_ORIGINAL_COMMAND. Лог пишется внутри песочницы под тем же UID, что и команды агента, поэтому агент может его подделать. Соединения Hermes → sshd независимо видны во flow logs Calico." id="c97">
           <mxCell style="rounded=1;absoluteArcSize=1;arcSize=15;whiteSpace=nowrap;html=1;fillColor=#8A3F7A;strokeColor=none;fontColor=#EDF0F3;fontSize=11;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;spacing=0;" vertex="1" parent="1">
             <mxGeometry x="636" y="972.5" width="58" height="15" as="geometry" />
           </mxCell>
